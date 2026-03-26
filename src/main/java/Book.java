@@ -3,8 +3,8 @@ import java.util.Objects;
 
 /**
  *
- * @author Oscar
- * 08/27/25
+ * @author Oscar Gonzalez
+ * 08/27/25 Book.java part 1 of the library project
  * 0.1.0
  */
 public class Book {
