@@ -3,8 +3,8 @@
     Abstract: This file holds test variables and objects as well as
               tests for the constructor, getters and setters, and other
               methods found within Reader.java.
-    Author: Andrea Ultreras
-    Date: 02/22/21
+    Author: Oscar Gonzalez
+    Date: 03/26/2026
  */
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import Utilities.Code;
+import utilities.Code;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
