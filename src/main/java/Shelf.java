@@ -1,9 +1,11 @@
 import utilities.Code;
 
 import java.util.HashMap;
+import java.util.Objects;
+
 
 /**
- *
+ * Shelf class represents a shelf in a library that holds books of a specific subject
  * @author Oscar
  * 08/27/25
  * 0.1.0
@@ -51,6 +53,11 @@ public class Shelf {
         this.subject = subject;
     }
 
+    /**
+     * Adds a book to the shelf
+     * @param book to be added to the shelf
+     * @return Code.SUCCESS if added, Code.SHELF_SUBJECT_MISMATCH_ERROR if mismatch
+     */
     public Code addBook(Book book){
 
         if(books.containsKey(book)){
@@ -67,6 +74,11 @@ public class Shelf {
 
     }
 
+    /**
+     * removes book from shelf
+     * @param book the book to be removed
+     * @return Code.SUCCESS if book is removed. Code.BOOK_NOT_IN_INVENTORY_ERROR if book is not in inventory
+     */
     public Code removeBook(Book book){
         if(!books.containsKey(book)){
             System.out.println(book.toString() + " is not on shelf " + this.subject);
@@ -81,6 +93,7 @@ public class Shelf {
         }
     }
 
+
     public int getBookCount(Book book){
         if(!books.containsKey(book)){
             return -1;
@@ -89,6 +102,10 @@ public class Shelf {
         }
     }
 
+    /**
+     * outputs set of total books on a specific shelf
+     * @return a string with total book\s on shelf with its category
+     */
     public String listBooks(){
         int totalBooks = 0;
         String output = "";
@@ -110,7 +127,23 @@ public class Shelf {
         return output;
     }
 
+    /**
+     *
+     * @return a string with shelfNumber : subject
+     */
     public String toString(){
         return shelfNumber + " : " + subject;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Shelf shelf = (Shelf) o;
+        return getShelfNumber() == shelf.getShelfNumber() && Objects.equals(getSubject(), shelf.getSubject());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getShelfNumber(), getSubject());
     }
 }
